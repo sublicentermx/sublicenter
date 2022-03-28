@@ -9,7 +9,7 @@
     'data': [
     ],
     'assets': {
-        'web.assets_frontend' [
+        'web.assets_frontend': [
             'theme_sublicenter/static/scss/main.scss'
         ]
     }
