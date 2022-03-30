@@ -9,19 +9,19 @@
                     <div class="collapse navbar-collapse" id="firstcol-1">
                         <ul class="navbar-nav mx-auto first-nav-top">
                             <li class="nav-item">
-                                <a class="nav-link active" style="color: var(--bs-white); font-weight: 500;">Envíos a todo México</a>
+                                <a class="nav-link active" style="color: #ffffff; font-weight: 500;">Envíos a todo México</a>
                             </li>
                             <li class="divider">|</li>
                             <li class="nav-item">
-                                <a class="nav-link active" style="color: var(--bs-white); font-weight: 500;">Envíos gratis a partir de $1,500.00 por Estafeta**</a>
+                                <a class="nav-link active" style="color: #ffffff; font-weight: 500;">Envíos gratis a partir de $1,500.00 por Estafeta**</a>
                             </li>
                             <li class="divider">|</li>
                             <li class="nav-item">
-                                <a class="nav-link active" style="color: var(--bs-white); font-weight: 500;">Lunes a viernes 9:00 a.m. - 6 p.m. Zona Centro México</a>
+                                <a class="nav-link active" style="color: #ffffff; font-weight: 500;">Lunes a viernes 9:00 a.m. - 6 p.m. Zona Centro México</a>
                             </li>
                             <li class="divider">|</li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="https://wa.me/+522229234591?text=Quiero%20más%20información..." style="color: var(--bs-white); font-weight: 500;">+522229234591</a>
+                                <a class="nav-link active" href="https://wa.me/+522229234591?text=Quiero%20más%20información..." style="color: #ffffff; font-weight: 500;">+522229234591</a>
                             </li>
                         </ul>
                     </div>
