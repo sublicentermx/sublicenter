@@ -39,10 +39,16 @@
                         </div>
                         <input name="order" type="hidden" class="o_search_order_by" data-oe-model="ir.ui.view" data-oe-id="1326" data-oe-field="arch" data-oe-xpath="/data/xpath[3]/form/input[1]" value="name asc" />
                     </form>
-                    <ul class="nav navbar-nav ml-auto text-right" id="top_menu">
-                        <li class="nav-item" t-if="website.user_id != user_id">
-                            <a class="nav-link" role="menuitem" t-attf-href="/my/orders">
-                              <span>Sale Order</span>
+                    <ul class="navbar-nav justify-content-evenly align-items-center align-content-center sb-menu-items mx-auto d-none d-xl-flex" id="top_menu">
+                        <li class="nav-item d-none d-xl-inline" t-if="website.user_id != user_id">
+                            <a class="nav-link" role="menuitem" t-attf-href="/shop/cart">
+                              <img loading="lazy" src="/theme_sublicenter/static/imgs/Carrito-Icon.svg" height="21" width="24" alt="carrito" itemprop="logo" />
+                            </a>
+                        </li>
+                        <li class="nav-item divider"></li>
+                        <li class="nav-item d-none d-xl-inline">
+                            <a class="nav-link" role="menuitem" t-attf-href="/contactus">
+                              <img loading="lazy" src="/theme_sublicenter/static/imgs/Contact-Icon.svg" height="21" width="24" alt="carrito" itemprop="logo" />
                             </a>
                         </li>
                         <li class="nav-item divider"></li>
@@ -53,13 +59,18 @@
                                 </b>
                             </a>
                             <div class="dropdown-menu js_usermenu" role="menu">
-                                <a href="/my/home" role="menuitem" class="dropdown-item">My Account</a>
-                                <a id="o_logout" class="dropdown-item" role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                                <a href="/my/home" role="menuitem" class="dropdown-item">Mi cuenta</a>
+                                <a id="o_logout" class="dropdown-item" role="menuitem" href="/web/session/logout?redirect=/">Salir</a>
                             </div>
                         </li>
                         <li class="nav-item" t-if="website.user_id == user_id">
                             <a class="nav-link" href="/web/login">
-                                <b>Sign in</b>
+                                <b>Iniciar Sesion</b>
+                            </a>
+                        </li>
+                        <li class="nav-item" t-if="website.user_id == user_id">
+                            <a class="nav-link" href="/web/signup">
+                                <b>Registrar</b>
                             </a>
                         </li>
                     </ul>
