@@ -28,8 +28,20 @@
                 </div>
             </nav>
             <nav class="navbar navbar-light navbar-expand-xl navigation-clean-search second-nav-search" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(78,78,78,1) 100%);">
-                <div class="container">
+                <div class="nav-desk container">
                     <a class="navbar-brand" href="/"><img loading="lazy" src="/theme_sublicenter/static/imgs/logo-animado-pag-web-loop.gif" height="46" width="201" alt="sublicenter.mx" itemprop="logo" class="img-fluid" /></a>
+                    <a class="d-block d-xl-none" href="/my/home" t-if="website.user_id != user_id">
+                        <img src="/theme_sublicenter/static/imgs/Login-Icon.svg" alt="sublicenter.mx" itemprop="logo" class="img-fluid d-inline sc-icon-user" />
+                    </a>
+                    <a class="d-block d-xl-none" href="/web/login" t-if="website.user_id == user_id">
+                        <img src="/theme_sublicenter/static/imgs/Login-Icon.svg" alt="sublicenter.mx" itemprop="logo" class="img-fluid d-inline sc-icon-user" />
+                    </a>
+                    <a class="d-block d-xl-none mx-2" role="menuitem" t-attf-href="/shop/cart">
+                        <img src="/theme_sublicenter/static/imgs/Carrito-Icon.svg" alt="sublicenter.mx" itemprop="logo" class="img-fluid d-inline sc-icon-cart" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <form method="get" class="search-form mx-auto" action="/shop" data-snippet="s_searchbar_input" style="width: 60%;">
                         <div role="search" class="d-flex justify-content-center"><label class="form-label d-flex mb-0" for="search_query"></label>
                             <input type="search" name="search" data-oe-model="ir.ui.view" data-oe-id="1326" data-oe-field="arch" data-oe-xpath="/data/xpath[3]/form/t[1]/div[1]/input[1]" class="form-control search-field" value="" data-search-type="products" data-limit="5" data-display-image="true" data-display-description="true" data-display-extra-link="true" data-display-detail="true" data-order-by="name asc" autocomplete="off" />
@@ -39,7 +51,25 @@
                         </div>
                         <input name="order" type="hidden" class="o_search_order_by" data-oe-model="ir.ui.view" data-oe-id="1326" data-oe-field="arch" data-oe-xpath="/data/xpath[3]/form/input[1]" value="name asc" />
                     </form>
-                    <ul class="navbar-nav justify-content-evenly align-items-center align-content-center sb-menu-items mx-auto d-none d-xl-flex" id="top_menu">
+                    <div class="offcanvas offcanvas-end offcanva-custom d-block d-xl-none" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header text-center">
+                            <h5 id="offcanvasRightLabel">Menu</h5>
+                            <button type="button" class="" data-bs-dismiss="offcanvas" aria-label="Close">
+                                <i class="bi bi-x"></i>
+                            </button>
+                        </div>
+                        <div class="offcanvas-body lista-custom">
+                            <ul>
+                                <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                    <t t-call="website.submenu">
+                                        <t t-set="item_class" t-valuef="nav-item"/>
+                                        <t t-set="link_class" t-valuef="nav-link"/>
+                                    </t>
+                                </t>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav justify-content-evenly align-items-center align-content-center sb-menu-items mx-auto d-none d-xl-flex">
                         <li class="nav-item d-none d-xl-inline" t-if="website.user_id != user_id">
                             <a class="nav-link" role="menuitem" t-attf-href="/shop/cart">
                               <img loading="lazy" src="/theme_sublicenter/static/imgs/Carrito-Icon.svg" height="21" width="24" alt="carrito" itemprop="logo" />
@@ -74,6 +104,20 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+            </nav>
+            <nav class="navbar navbar-light navbar-expand-md navigation-clean d-none d-sm-none d-md-block" style="background: rgb(255,8,140);background: linear-gradient(0deg, rgba(255,8,140,1) 0%, rgba(254,25,89,1) 48%);">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navcol-2">
+                        <ul class="navbar-nav mx-auto d-none d-xl-flex">
+                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <t t-call="website.submenu">
+                                    <t t-set="item_class" t-valuef="nav-item"/>
+                                    <t t-set="link_class" t-valuef="nav-link"/>
+                                </t>
+                            </t>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </xpath>
