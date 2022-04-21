@@ -6,7 +6,8 @@
     'category': 'Theme/Creative',
 
     'depends': ['website', 'website_sale'],
-    'data': [
+    'data': [ 
+        'views/template/header.xml' 
     ],
     'assets': {
         'web.assets_frontend': [
