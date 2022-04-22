@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Customize post-header  -->
+    <template id="custom_footer" inherit_id="website.layout" name="Custom Footer">
+      <!-- Add an element after the top menu  -->
+        <xpath expr="//div[@id='wrapwrap']/footer" position="replace">
+            <footer class="footer-dark">
+                <div class="container">
+                    <div class="row justify-content-evenly">
+                        <div class="col-md-4 item text">
+                            <h3 class="footer-big-heading mb-5">Síguenos</h3>
+                            <div class="row my-5">
+                                <div class="col item social px-0 text-center" style="width: 100%;">
+                                    <a href="https://www.facebook.com/SublicenterMx">
+                                        <img class="icon lazyload" src="/theme_sublicenter/static/imgs/facebook.svg" alt="Facebook" />
+                                    </a>
+                                </div>
+                                <div class="col item social px-0 text-center" style="width: 100%;">
+                                    <a href="https://www.instagram.com/sublicenter.mx/">
+                                        <img class="icon lazyload" src="/theme_sublicenter/static/imgs/instagram.svg" alt="Facebook" />
+                                    </a>
+                                </div>
+                                <div class="col item social px-0 text-center" style="width: 100%;">
+                                    <a href="https://www.youtube.com/channel/UCJPt-k89IXgs_IrCZPGByQw">
+                                        <img class="icon lazyload" src="/theme_sublicenter/static/imgs/youtube.svg" alt="Facebook" />
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="footer-big-heading mt-5">Pago seguro</h3>
+                        </div>
+                        <div class="col-md-4 item">
+                            <ul>
+                              <li><a href="/pages/politica-de-cookies">Política de cookies</a></li>
+                              <li><a href="/pages/politicas-de-privacidad">Políticas de Priv.</a></li>
+                              <li><a href="/pages/quienes-somos">Quiénes Somos</a></li>
+                              <li><a href="/pages/faqs">FAQ'S</a></li>
+                            </ul>
+                            <div class="row">
+                                <div class="col px-0 text-center" style="width: 100%;">
+                                    <img class="checkout lazyload" src="/theme_sublicenter/static/imgs/VISA.svg" alt="Visa" />
+                                </div>
+                                <div class="col px-0 text-center" style="width: 100%;">
+                                    <img class="checkout lazyload" src="/theme_sublicenter/static/imgs/Mastercard.svg" alt="Mastercard" />
+                                </div>
+                                <div class="col px-0 text-center" style="width: 100%;">
+                                    <img class="checkout lazyload" src="/theme_sublicenter/static/imgs/amex.svg" style="width:52px;" alt="Amex" />
+                                </div>
+                                <div class="col px-0 text-center" style="width: 100%;">
+                                    <img class="checkout lazyload" src="/theme_sublicenter/static/imgs/paypal.svg" alt="Paypal" />
+                                </div>
+                                <div class="col px-0 text-center" style="width: 100%;">
+                                    <img class="checkout lazyload" src="/theme_sublicenter/static/imgs/Shopify.svg" style="width:52px;" alt="Shopify" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 item">
+                            <ul>
+                              <li><a href="/pages/politicas-de-garantia">Políticas de Garantía</a></li>
+                              <li><a href="/pages/copia-de-p-style-text-align-center-strong-style-color-1a1a1a-politicas-strong-strong-style-color-f7310f-de-privacidad-strong-p">Términos y Condiciones</a></li>
+                              <li><a href="/pages/facturacion">Facturación</a></li>
+                              <li><a href="https://sublicenter-catalogo.vercel.app/" target="_self" rel="noopener noreferrer">Descarga nuestro catalogo en PDF</a></li>
+                            </ul>
+                            <p class="footer-ssl">Utilizamos seguridad SSL encriptada para garantizar que la información de su tarjeta de crédito esté 100% protegida.</p>
+                        </div>
+                    </div>
+                    <p class="copyright" style="color: var(--bs-white);opacity: 1;">© 2021 sublicenter.mx | Todos los derechos reservados. | www.sublicenter.mx</p>
+                </div>
+            </footer>
+        </xpath>
+    </template>
+</odoo>
