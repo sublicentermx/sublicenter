@@ -7,11 +7,13 @@
 
     'depends': ['website', 'website_sale'],
     'data': [ 
-        'views/template/header.xml' 
+        'views/template/header.xml',
+        'views/template/footer.xml'
     ],
     'assets': {
         'web.assets_frontend': [
-            'theme_sublicenter/static/scss/main.scss'
+            'theme_sublicenter/static/scss/main.scss',
+            'theme_sublicenter/static/scss/styles.min.css'
         ]
     }
 }
