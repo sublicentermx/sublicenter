@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Part of Sentilis. See LICENSE file for full copyright and licensing details.
+-->
+<odoo>
+
+    <record id="skydropx_view_picking_withcarrier_out_form" model="ir.ui.view">
+        <field name="name">skydropx.delivery.stock.picking_withcarrier.form.view</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="delivery.view_picking_withcarrier_out_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='other_infos']" position="after">
+                <group name="skydropx_data" string="Skydropx">
+                    <field name="skydropx_provider" readonly="1" attrs="{'invisible': [('skydropx_product_packaging_id', '=', False)] }" />
+                    <field name="skydropx_service_level_code" readonly="1" attrs="{'invisible': [('skydropx_product_packaging_id', '=', False)] }" />
+                    <field name="skydropx_total_package" attrs="{'invisible': [('skydropx_product_packaging_id', '=', False)] }" />
+                    <field name="skydropx_product_packaging_id" attrs="{'invisible': [('skydropx_product_packaging_id', '=', False)] }" />
+                    <field name="skydropx_packaging_id" attrs="{'invisible': [('skydropx_product_packaging_id', '!=', False)] }" />
+                    <field name="skydropx_product_code_consignment_note" attrs="{'readonly': [('state', 'in', ('done','cancel'))] }" />
+                    <field name="skydropx_consignment_note_packaging_code" attrs="{'readonly': [('state', 'in', ('done','cancel'))] }" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_picking_select_skydropx_form_view" model="ir.ui.view">
+        <field name="name">stock.picking.select.skydropx.form.view</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_validate']" position="after">
+                <button name="button_skydropx" type="object" groups="stock.group_stock_user" class="o_btn_validate" attrs="{'invisible': ['|', ('picking_type_code', '!=', 'outgoing'),('show_validate', '=', False)]}" string="Paq. SkydropX" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

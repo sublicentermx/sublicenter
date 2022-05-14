@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Part of Sentilis. See LICENSE file for full copyright and licensing details.
+-->
+<odoo>
+
+    <record id="view_sale_order_form_with_provider_srenvio" model="ir.ui.view">
+        <field name="name">sale.order.form.provider.srenvio</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="delivery.view_order_form_with_carrier" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position='after'>
+
+                <field name="carrier_id" invisible="True" />
+                <field name="carrier_delivery_type" invisible="True" />
+
+                <field name="srenvio_provider" readonly="True" attrs="{ 'invisible': [('carrier_delivery_type','!=','srenvio')] }" />
+                <field name="srenvio_service_level_code" readonly="True" attrs="{ 'invisible': [('carrier_delivery_type','!=','srenvio')] }" />
+                <field name="skydropx_total_package" readonly="True" attrs="{ 'invisible': [('carrier_delivery_type','!=','srenvio')] }" />
+                <field name="skydropx_packaging_id" readonly="True" attrs="{ 'invisible': [('carrier_delivery_type','!=','srenvio')] }" />
+
+            </xpath>
+
+            <xpath expr="//group[@name='note_group']" position="before">
+                <div class="oe_right">
+                    <button name="set_skydropx_insure_line" type="object" class="oe_inline oe_link" attrs="{'invisible':['|','|',('carrier_id','=',False),('carrier_delivery_type','!=','srenvio'), ('state','not in',('draft','sent'))]}">
+                        <i class="fa fa-arrow-right" />
+                        Añadir seguro
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

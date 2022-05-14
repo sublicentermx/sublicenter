@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Part of Sentilis. See LICENSE file for full copyright and licensing details.
+-->
+<odoo>
+    <template id="delivery_skydropx_properties">
+        <input t-att-value="delivery.id" type="hidden" name="skydropx-carrier-id" />
+
+        <input t-att-value="delivery.srenvio_enable_insure_shipment" type="hidden" name="skydropx-enable-insure-shipment" />
+
+        <input t-att-value="order.srenvio_provider" type="hidden" name="skydropx-carrier-provider-selected" />
+
+        <input t-att-value="order.srenvio_service_level_code" type="hidden" name="skydropx-carrier-service-level-selected" />
+
+        <ul id="srenvio-list-group-subitem" class="list-group">
+            <!-- <li class="list-group-item">
+                <input t-att-value="delivery.id" t-att-id="'srenvio_delivery_%i' % delivery.id" type="radio" name="srenvio_delivery_type" t-att-checked="order.carrier_id and order.carrier_id.id == delivery.id and 'checked' or False" t-att-class="'hidden' if delivery_nb == 1 else ''"/>
+
+                <label class="label-optional" t-field="delivery.name" t-att-for="'delivery_%i' % delivery.id"/>
+            </li>  -->
+        </ul>
+    </template>
+    <template id="payment_srenvio_delivery" name="SrEnvio Delivery Costs" inherit_id="website_sale_delivery.payment_delivery">
+        <xpath expr="//div[@id='delivery_carrier']/t" position="inside">
+            <div id="skydropx-carrier" t-if="delivery.delivery_type == 'srenvio'">
+                <t t-call="innovt_srenvio.delivery_skydropx_properties" />
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='delivery_method']/ul[hasclass('list-group')]/t/li[hasclass('list-group-item','o_delivery_carrier_select')]" position="after">
+            <div id="skydropx-carrier" t-if="delivery.delivery_type == 'srenvio'">
+                <t t-call="innovt_srenvio.delivery_skydropx_properties" />
+            </div>
+        </xpath>
+    </template>
+</odoo>
