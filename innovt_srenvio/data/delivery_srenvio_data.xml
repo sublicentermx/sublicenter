@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+   Part of Sentilis. See LICENSE file for full copyright and licensing details.
+-->
+<odoo>
+    <data noupdate="1">
+
+        <record id="srenvio_packaging_SRENVIO_5KG_BOX" model="stock.package.type">
+            <field name="name">SRENVIO_5KG_BOX</field>
+            <field name="shipper_package_code">SRENVIO_5KG_BOX</field>
+            <field name="package_carrier_type">srenvio</field>
+            <field name="height">21</field>
+            <field name="width">20</field>
+            <field name="packaging_length">30</field>
+            <field name="max_weight">5</field>
+        </record>
+
+        <record id="srenvio_packaging_SRENVIO_11KG_BOX" model="stock.package.type">
+            <field name="name">SRENVIO_11KG_BOX</field>
+            <field name="shipper_package_code">SRENVIO_11KG_BOX</field>
+            <field name="package_carrier_type">srenvio</field>
+            <field name="height">28</field>
+            <field name="width">25</field>
+            <field name="packaging_length">34</field>
+            <field name="max_weight">11</field>
+        </record>
+
+        <record id="product_product_delivery_srenvio_natio" model="product.product">
+            <field name="name">Envío SkydropX</field>
+            <field name="default_code">SDXE</field>
+            <field name="type">service</field>
+            <field name="categ_id" ref="delivery.product_category_deliveries"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="list_price">0.0</field>
+            <field name="invoice_policy">order</field>
+        </record>
+
+        <record id="delivery_carrier_srenvio_natio" model="delivery.carrier">
+            <field name="name">SkydropX</field>
+            <field name="sequence">4</field>
+            <field name="product_id" ref="innovt_srenvio.product_product_delivery_srenvio_natio"/>
+            <field name="delivery_type">srenvio</field>
+            <field name="srenvio_default_packaging_id" ref="srenvio_packaging_SRENVIO_5KG_BOX"/>
+        </record>
+
+        <record id="product_product_skydropx_ensure_shipment" model="product.product">
+            <field name="name">Seguro de envío SkydropX</field>
+            <field name="default_code">SDXES</field>
+            <field name="type">service</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="list_price">0.0</field>
+        </record>
+
+        <record id="product_pricelist_skydropx_ensure_shipment" model="product.pricelist">
+            <field name="name">Tarifa de seguro de envío SkydropX</field>
+        </record>
+
+    </data>
+</odoo>
