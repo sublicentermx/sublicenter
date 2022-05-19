@@ -170,6 +170,15 @@ a, a:-webkit-any-link {
     .navigation-clean .navbar-brand, .navigation-clean-search .navbar-brand {
 		margin-right: auto;
 	}
+    .dropdown-custom-s{
+        margin-top: -23px !important;
+        .dropdown-toggle-custom-s{
+            padding: 0rem 0rem !important;
+        }
+        .dropdown-menu-custom-s{
+            min-width: 8rem !important; 
+        }
+    }
 }
 
 /* Footer */
