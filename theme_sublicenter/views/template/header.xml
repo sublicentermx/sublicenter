@@ -30,12 +30,19 @@
             <nav class="navbar navbar-light navbar-expand-xl navigation-clean-search second-nav-search" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(78,78,78,1) 100%);">
                 <div class="nav-desk container">
                     <a class="navbar-brand" href="/"><img loading="lazy" src="/theme_sublicenter/static/imgs/logo-animado-pag-web-loop.gif" height="46" width="201" alt="sublicenter.mx" itemprop="logo" class="img-fluid" /></a>
-                    <a class="d-block d-xl-none" href="/my/home" t-if="website.user_id != user_id">
-                        <img src="/theme_sublicenter/static/imgs/Login-Icon.svg" alt="sublicenter.mx" itemprop="logo" class="img-fluid d-inline sc-icon-user" />
-                    </a>
+                    <li class="nav-item dropdown dropdown-custom-s" t-if="website.user_id != user_id">
+                        <a class="d-block d-xl-none nav-link dropdown-toggle dropdown-toggle-custom-s" href="#"  data-toggle="dropdown">
+                            <img src="/theme_sublicenter/static/imgs/Login-Icon.svg" alt="sublicenter.mx" itemprop="logo" class="img-fluid d-inline sc-icon-user" />
+                        </a>
+                        <div class="dropdown-menu js_usermenu dropdown-menu-custom-s" role="menu">
+                            <a href="/my/home" role="menuitem" class="dropdown-item">Mi cuenta</a>
+                            <a id="o_logout" class="dropdown-item" role="menuitem" href="/web/session/logout?redirect=/">Salir</a>
+                        </div>
+                    </li>
                     <a class="d-block d-xl-none" href="/web/login" t-if="website.user_id == user_id">
                         <img src="/theme_sublicenter/static/imgs/Login-Icon.svg" alt="sublicenter.mx" itemprop="logo" class="img-fluid d-inline sc-icon-user" />
                     </a>
+                    
                     <a class="d-block d-xl-none mx-2" role="menuitem" t-attf-href="/shop/cart">
                         <img src="/theme_sublicenter/static/imgs/Carrito-Icon.svg" alt="sublicenter.mx" itemprop="logo" class="img-fluid d-inline sc-icon-cart" />
                     </a>
